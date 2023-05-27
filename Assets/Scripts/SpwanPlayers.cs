@@ -10,10 +10,4 @@ public class SpwanPlayers : MonoBehaviour
     {
         PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(), Quaternion.identity);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

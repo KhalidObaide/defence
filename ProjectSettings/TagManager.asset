@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Buildable
+  - Player1Lane
+  - Player2Lane
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7377093302323375527}
   - component: {fileID: 7724055196154840498}
+  - component: {fileID: 1604334266825608969}
   - component: {fileID: 1059722167698576429}
   m_Layer: 0
   m_Name: GameLogic
@@ -51,6 +52,30 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 523375ae547c64496b9e3012c58d1d3d, type: 2}
   buildableSurfaces:
   - Buildable
+--- !u!114 &1604334266825608969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057235832320379304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15ba1ebcea8a4e10a8890591077bcd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1LaneTag: Player1Lane
+  player2LaneTag: Player2Lane
+  runners:
+  - {fileID: 11400000, guid: 6f72f6a2ed88f4be9917c5db079ba52d, type: 2}
+  - {fileID: 11400000, guid: 99752ed1a1961478fa593aebd23e9354, type: 2}
+  - {fileID: 11400000, guid: 7e25ed0e0b329424fa05dd487f6477df, type: 2}
+  autoWaveMode: 1
+  numberOfWaves: 5
+  initialDelay: 2
+  waveInterval: 5
+  initialRunnerCount: 1
+  additionalRunnersPerWave: 1
 --- !u!114 &1059722167698576429
 MonoBehaviour:
   m_ObjectHideFlags: 0
