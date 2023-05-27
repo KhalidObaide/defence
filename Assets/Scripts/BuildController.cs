@@ -1,24 +1,39 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Photon.Pun;
 
 public class BuildController : MonoBehaviour
 {
     public List<Tower> towers;
-    [Tag]
+    #if UNITY_EDITOR
+        [Tag]
+    #endif
     public List<string> buildableSurfaces;
 
     private Tower currentTower;
     private GameObject previewObject;
     private int previewLayer;
 
+    private PhotonView view;
+
     void Start()
     {
+        view = GetComponent<PhotonView>();
+        if ( !view.IsMine )
+        {
+            return;
+        }
         previewLayer = LayerMask.NameToLayer("Preview");
         ChangeTower(0);
     }
 
     void Update()
     {
+        if ( !view.IsMine )
+        {
+            return;
+        }
+
         for (int i = 0; i < towers.Count; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
@@ -112,7 +127,7 @@ public class BuildController : MonoBehaviour
 
     void SpawnPrefab()
     {
-        GameObject newObject = Instantiate(currentTower.towerPrefab, previewObject.transform.position, previewObject.transform.rotation);
+        PhotonNetwork.Instantiate(currentTower.towerPrefab.name, previewObject.transform.position, previewObject.transform.rotation);
     }
 
     bool IsCollidingWithObject()

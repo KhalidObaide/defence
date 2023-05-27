@@ -1,9 +1,6 @@
-using UnityEditor;
+#if UNITY_EDITOR
 using UnityEngine;
-
-
-public class TagAttribute : PropertyAttribute { }
-
+using UnityEditor;
 
 [CustomPropertyDrawer(typeof(TagAttribute))]
 public class TagDrawer : PropertyDrawer
@@ -13,3 +10,4 @@ public class TagDrawer : PropertyDrawer
         property.stringValue = EditorGUI.TagField(position, label, property.stringValue);
     }
 }
+#endif
